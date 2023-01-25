@@ -33,7 +33,7 @@ const res=Math.round(resul/1000)
 
 
 
-    const setValue=3600000
+    const setValue= 60000
 
    
 

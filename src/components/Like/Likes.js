@@ -12,7 +12,7 @@ const Likes = ({ide}) => {
     }
    
   return (
-    <div><Button onClick={toggleLike}>{Liked && <HeartFilled />}{!Liked && <HeartOutlined />}</Button></div>
+    <div><Button onClick={toggleLike}>{Liked && <HeartFilled style={{color:"red"}} />}{!Liked && <HeartOutlined style={{color:"red"}} />}</Button></div>
   )
 }
 
