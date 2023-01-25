@@ -10,6 +10,8 @@ to switch to 60 mins change value of const setValue=3600000 (60 min) so that api
 ## Available Scripts
 
 In the project directory, you can run:
+### `npm install`
+Installs node modules in /
 
 ### `npm start`
 
