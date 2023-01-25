@@ -32,7 +32,8 @@ export const counterSlice = createSlice({
     },
     incrementByAmount: (state, action) => {
       state.ObjVal = action.payload
- 
+      state.Like=[]
+      
  
   
       

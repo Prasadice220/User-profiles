@@ -7,8 +7,8 @@ import Likes from '../Like/Likes';
 import Delete from '../Delete/Delete';
 
 const { Meta } = Card;
-const ShowCard = ({name,email,phone,website,username,ids}) => {
-  
+const ShowCard = ({name,email,phone,website,username,ids,address,company,residence}) => {
+    const suma= address+residence
     const image = `https://avatars.dicebear.com/v2/avataaars/${username}.svg?options[mood][]=happy`
   return (
     <Card
@@ -36,7 +36,9 @@ const ShowCard = ({name,email,phone,website,username,ids}) => {
       title={name}
       description={(<><h4><MailOutlined /> {email}</h4>
       <h4><PhoneOutlined /> {phone}</h4>
-      <h4><GlobalOutlined /> {`http://${website}`}</h4></>)}
+      <h4><GlobalOutlined /> {`http://${website}`}</h4>
+      <h4>Address: {`${suma}`}</h4>
+      <h4>Company: {`${company}`}</h4></>)}
     />
   </Card>
   

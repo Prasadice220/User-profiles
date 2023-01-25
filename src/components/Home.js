@@ -10,7 +10,9 @@ const Home = () => {
  
   const [Time,setTime]=useState(false)
    const count = useSelector((state) => state.counter.ObjVal)
-   const sett = localStorage.getItem("flag") == "false"? false:true
+   const sett = localStorage.getItem("flag") == "false" ? false:true
+   
+   
   const [setmsg,setMsg]=useState(false)
    const setc =localStorage.getItem("Time")==null?false:true
    const Dates=new Date()
@@ -41,8 +43,13 @@ const res=Math.round(resul/1000)
 
 
    const dispatch = useDispatch()
-   const [isLoading,SetLoading] =useState(true)
+   const [isLoading,SetLoading] =useState(false)
+if(localStorage.getItem("flag") == null){
+   SetLoading(true)
+}
+
    const Search =()=>{
+
     setTimeout(()=>{
         fetch('https://jsonplaceholder.typicode.com/users').then(r=>r.json()).then(results=>{
           dispatch(incrementByAmount(results))
@@ -62,7 +69,7 @@ const res=Math.round(resul/1000)
       localStorage.setItem("Time",Dat+setValue)
       localStorage.setItem("flag",false)
     }else if(localStorage.getItem("Time") <= Dat){
-
+      SetLoading(true)
       localStorage.setItem("flag",true)
     }
     else{
@@ -81,7 +88,7 @@ const res=Math.round(resul/1000)
   return (
     <div>
       {contextHolder}
-        {isLoading && sett && <div style={{margin:440}}><Loader/></div> }
+        {isLoading && <div style={{margin:440}}><Loader/></div> }
         
     {!Time && handleTime()}
     {sett && Search()}
