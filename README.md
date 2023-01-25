@@ -1,6 +1,13 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App]
+(https://github.com/facebook/create-react-app).
+
+Data Persistence for app is set to 60 mins (3600000 milisecs)
+to quickly check if it works you can set it to 1 min by changing value
+of const "setValue=60000"  (1min) which is in home.js so api calls can 
+be made every 1 min.
+
 
 ## Available Scripts
 
